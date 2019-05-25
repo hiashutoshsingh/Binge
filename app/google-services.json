@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "508698240221",
+    "firebase_url": "https://binge-test.firebaseio.com",
+    "project_id": "binge-test",
+    "storage_bucket": "binge-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508698240221:android:0113a633a0655336",
+        "android_client_info": {
+          "package_name": "ashu.com.bingetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508698240221-3ir9hlvvudemm9k42hsdu0ttgg829bnv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ashu.com.bingetest",
+            "certificate_hash": "cb37c7ff951adb5297a21df3d6e14c97feb923e7"
+          }
+        },
+        {
+          "client_id": "508698240221-n624lked5fj5srl6jn2doq0t2na2ts5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe22Pky93AaxviClgek71yewxPEU5K7tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508698240221-n624lked5fj5srl6jn2doq0t2na2ts5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
