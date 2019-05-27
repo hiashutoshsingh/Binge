@@ -2,59 +2,64 @@ package ashu.com.bingetest;
 
 public class ItemData {
 
+    private String fire_res_name;
+    private String fire_res_type;
+    private String fire_res_cost;
+    private String fire_res_rating;
+    private String fire_res_image;
 
-    private String res_name;
-    private String res_type;
-    private String res_cost;
-    private String res_rating;
-    private int res_image;
 
-    public String getRes_type() {
-        return res_type;
+    public ItemData() {
+
     }
 
-    public void setRes_type(String res_type) {
-        this.res_type = res_type;
+    public ItemData(String fire_res_name, String fire_res_type, String fire_res_cost, String fire_res_rating, String fire_res_image) {
+        this.fire_res_name = fire_res_name;
+        this.fire_res_type = fire_res_type;
+        this.fire_res_cost = fire_res_cost;
+        this.fire_res_rating = fire_res_rating;
+        this.fire_res_image = fire_res_image;
     }
 
-    public String getRes_cost() {
-        return res_cost;
-    }
-
-    public void setRes_cost(String res_cost) {
-        this.res_cost = res_cost;
-    }
-
-    public String getRes_rating() {
-        return res_rating;
-    }
-
-    public void setRes_rating(String res_rating) {
-        this.res_rating = res_rating;
-    }
-
-    public ItemData(String res_name, String res_type, String res_cost, String res_rating, int res_image) {
-        this.res_name = res_name;
-        this.res_type = res_type;
-        this.res_cost = res_cost;
-        this.res_rating = res_rating;
-        this.res_image = res_image;
+    public String getFire_res_type() {
+        return fire_res_type;
     }
 
 
-    public String getRes_name() {
-        return res_name;
+    public String getFire_res_cost() {
+        return fire_res_cost;
     }
 
-    public void setRes_name(String res_name) {
-        this.res_name = res_name;
+    public void setFire_res_name(String fire_res_name) {
+        this.fire_res_name = fire_res_name;
     }
 
-    public int getRes_image() {
-        return res_image;
+    public void setFire_res_type(String fire_res_type) {
+        this.fire_res_type = fire_res_type;
     }
 
-    public void setRes_image(int res_image) {
-        this.res_image = res_image;
+    public void setFire_res_cost(String fire_res_cost) {
+        this.fire_res_cost = fire_res_cost;
     }
+
+    public void setFire_res_rating(String fire_res_rating) {
+        this.fire_res_rating = fire_res_rating;
+    }
+
+    public void setFire_res_image(String fire_res_image) {
+        this.fire_res_image = fire_res_image;
+    }
+
+    public String getFire_res_rating() {
+        return fire_res_rating;
+    }
+
+    public String getFire_res_name() {
+        return fire_res_name;
+    }
+
+    public String getFire_res_image() {
+        return fire_res_image;
+    }
+
 }
