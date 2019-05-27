@@ -6,19 +6,19 @@ public class RestrauntItemModel {
     private String fire_res_type;
     private String fire_res_price;
     private String fire_res_rating;
-    private String fire_res_image;
+    private String fire_res_img;
 
 
     public RestrauntItemModel() {
 
     }
 
-    public RestrauntItemModel(String fire_res_name, String fire_res_type, String fire_res_price, String fire_res_rating, String fire_res_image) {
+    public RestrauntItemModel(String fire_res_name, String fire_res_type, String fire_res_price, String fire_res_rating, String fire_res_img) {
         this.fire_res_name = fire_res_name;
         this.fire_res_type = fire_res_type;
         this.fire_res_price = fire_res_price;
         this.fire_res_rating = fire_res_rating;
-        this.fire_res_image = fire_res_image;
+        this.fire_res_img = fire_res_img;
     }
 
     public String getFire_res_type() {
@@ -46,8 +46,8 @@ public class RestrauntItemModel {
         this.fire_res_rating = fire_res_rating;
     }
 
-    public void setFire_res_image(String fire_res_image) {
-        this.fire_res_image = fire_res_image;
+    public void setFire_res_img(String fire_res_img) {
+        this.fire_res_img = fire_res_img;
     }
 
     public String getFire_res_rating() {
@@ -58,8 +58,8 @@ public class RestrauntItemModel {
         return fire_res_name;
     }
 
-    public String getFire_res_image() {
-        return fire_res_image;
+    public String getFire_res_img() {
+        return fire_res_img;
     }
 
 }

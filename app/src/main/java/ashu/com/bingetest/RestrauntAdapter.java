@@ -2,6 +2,7 @@ package ashu.com.bingetest;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.item_layout,parent, false);
+        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.restraunt_item_layout,parent, false);
         ViewHolder viewHolder = new ViewHolder(itemLayoutView);
         return viewHolder;
     }
@@ -36,9 +37,8 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
         viewHolder.txt_res_type.setText(list.get(position).getFire_res_type());
         viewHolder.txt_res_rating.setText(list.get(position).getFire_res_rating());
         viewHolder.text_res_price.setText(list.get(position).getFire_res_price());
-        Picasso.get().load(list.get(position).getFire_res_image()).into(viewHolder.img_res);
-
-
+        Picasso.get().load(list.get(position).getFire_res_img()).placeholder(R.drawable.ic_launcher_foreground)
+                .into(viewHolder.img_res);
 
     }
 
@@ -66,8 +66,7 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Toast.makeText(context, text_res_price.getText().toString()+" is clicked", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, RestrauntDetail.class);
+                    Intent intent = new Intent(context, RestrauntDetailActivity.class);
                     context.startActivity(intent);
                 }
             });

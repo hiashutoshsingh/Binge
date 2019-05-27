@@ -15,7 +15,6 @@ public class VideoAct extends AppCompatActivity {
 
         WebView webView = (WebView)findViewById(R.id.video_webview);
         Intent intent = getIntent();
-        Toast.makeText(this,"video reeviec "+intent.getStringExtra("video"),Toast.LENGTH_SHORT).show();
         webView.loadUrl(intent.getStringExtra("video"));
     }
 }

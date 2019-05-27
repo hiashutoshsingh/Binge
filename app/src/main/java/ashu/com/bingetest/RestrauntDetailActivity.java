@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,17 +15,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-public class RestrauntDetail extends AppCompatActivity {
+public class RestrauntDetailActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference,db;
     ArrayList<MenuItemModel> list;
-    MenuItemsAdapter menuItemsAdapter;
+    MenuItemAdapter menuItemAdapter;
     RecyclerView recyclerView;
 
     @Override
@@ -38,18 +34,10 @@ public class RestrauntDetail extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("res_list").child("1").child("menu");
         db = FirebaseDatabase.getInstance().getReference().child("res_list").child("1").child("video");
         databaseReference.keepSynced(true);
-       // Query query = databaseReference.child("menu").orderByChild("1");
-        //Log.d("ashu","video "+ FirebaseDatabase.getInstance().getReference().child("res_list").child("1").child("video").getKey());
-
-
-
 
         db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -60,12 +48,11 @@ public class RestrauntDetail extends AppCompatActivity {
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(RestrauntDetail.this, VideoAct.class);
+                        Intent intent = new Intent(RestrauntDetailActivity.this, VideoAct.class);
                         intent.putExtra("video",str_video);
                         startActivity(intent);
                     }
                 });
-                Toast.makeText(RestrauntDetail.this,"-----"+ str_video,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -87,9 +74,9 @@ public class RestrauntDetail extends AppCompatActivity {
 
                 }
 
-                menuItemsAdapter = new MenuItemsAdapter(list,RestrauntDetail.this);
-                recyclerView.setAdapter(menuItemsAdapter);
-                menuItemsAdapter.notifyDataSetChanged();
+                menuItemAdapter = new MenuItemAdapter(list, RestrauntDetailActivity.this);
+                recyclerView.setAdapter(menuItemAdapter);
+                menuItemAdapter.notifyDataSetChanged();
 
             }
 

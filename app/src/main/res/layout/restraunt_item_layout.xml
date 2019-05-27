@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:contentPadding="5dp">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/id_res_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <LinearLayout
+            android:padding="2dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_res_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Restaurant"
+                android:textStyle="bold"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/id_res_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NorthIndia" />
+
+            <TextView
+                android:textSize="20dp"
+                android:id="@+id/id_res_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs 200" />
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/id_res_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

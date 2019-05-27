@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MenuItemsAdapter extends RecyclerView.Adapter<MenuItemsAdapter.MenuItemHolder> {
+public class MenuItemAdapter extends RecyclerView.Adapter<MenuItemAdapter.MenuItemHolder> {
 
     ArrayList<MenuItemModel> list;
     Context context;
 
-    public MenuItemsAdapter(ArrayList<MenuItemModel> list, Context context) {
+    public MenuItemAdapter(ArrayList<MenuItemModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
