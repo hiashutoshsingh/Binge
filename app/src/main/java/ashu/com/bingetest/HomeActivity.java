@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,14 +18,14 @@ import java.util.ArrayList;
 public class HomeActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference;
-    ArrayList<RestrauntItemModel> list;
-    RestrauntAdapter restrauntAdapter;
+    ArrayList<RestaurantItemModel> list;
+    RestaurantAdapter restaurantAdapter;
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_restraunts);
+        setContentView(R.layout.activity_list_restaurant);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -36,15 +35,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                list = new ArrayList<RestrauntItemModel>();
+                list = new ArrayList<RestaurantItemModel>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
-                    RestrauntItemModel value = dataSnapshot1.getValue(RestrauntItemModel.class);
+                    RestaurantItemModel value = dataSnapshot1.getValue(RestaurantItemModel.class);
                     list.add(value);
                 }
-                restrauntAdapter = new RestrauntAdapter(list, HomeActivity.this);
-                recyclerView.setAdapter(restrauntAdapter);
-                restrauntAdapter.notifyDataSetChanged();
+                restaurantAdapter = new RestaurantAdapter(list, HomeActivity.this);
+                recyclerView.setAdapter(restaurantAdapter);
+                restaurantAdapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class RestrauntDetailActivity extends AppCompatActivity {
+public class RestaurantDetailActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference,db;
     ArrayList<MenuItemModel> list;
@@ -29,14 +29,16 @@ public class RestrauntDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restraunt_detail);
+        setContentView(R.layout.activity_restaurant_detail);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView_restrauntDetail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Intent intent =getIntent();
+        String item_position = Integer.toString(intent.getIntExtra("position",1));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("res_list").child("1").child("menu");
-        db = FirebaseDatabase.getInstance().getReference().child("res_list").child("1").child("video");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("res_list").child(item_position).child("menu");
+        db = FirebaseDatabase.getInstance().getReference().child("res_list").child(item_position).child("video");
         databaseReference.keepSynced(true);
 
         db.addValueEventListener(new ValueEventListener() {
@@ -48,7 +50,7 @@ public class RestrauntDetailActivity extends AppCompatActivity {
                 fab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(RestrauntDetailActivity.this, VideoAct.class);
+                        Intent intent = new Intent(RestaurantDetailActivity.this, VideoAct.class);
                         intent.putExtra("video",str_video);
                         startActivity(intent);
                     }
@@ -74,7 +76,7 @@ public class RestrauntDetailActivity extends AppCompatActivity {
 
                 }
 
-                menuItemAdapter = new MenuItemAdapter(list, RestrauntDetailActivity.this);
+                menuItemAdapter = new MenuItemAdapter(list, RestaurantDetailActivity.this);
                 recyclerView.setAdapter(menuItemAdapter);
                 menuItemAdapter.notifyDataSetChanged();
 

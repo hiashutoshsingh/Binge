@@ -2,7 +2,6 @@ package ashu.com.bingetest;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +12,28 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.ViewHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.ViewHolder> {
 
-    ArrayList<RestrauntItemModel> list;
+    ArrayList<RestaurantItemModel> list;
     Context context;
 
-    public RestrauntAdapter(ArrayList<RestrauntItemModel> list, Context context) {
+    public RestaurantAdapter(ArrayList<RestaurantItemModel> list, Context context) {
         this.list=list;
         this.context=context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.restraunt_item_layout,parent, false);
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.restaurant_item_layout,parent, false);
+        final ViewHolder viewHolder = new ViewHolder(itemLayoutView);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RestaurantDetailActivity.class);
+                intent.putExtra("position",viewHolder.getAdapterPosition()+1);
+                context.startActivity(intent);
+            }
+        });
         return viewHolder;
     }
 
@@ -63,13 +70,13 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
             txt_res_rating=(TextView)itemLayoutView.findViewById(R.id.id_res_rating);
             txt_res_type=(TextView)itemLayoutView.findViewById(R.id.id_res_type);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, RestrauntDetailActivity.class);
-                    context.startActivity(intent);
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(context, RestaurantDetailActivity.class);
+//                    context.startActivity(intent);
+//                }
+//            });
         }
     }
 }

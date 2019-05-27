@@ -1,6 +1,6 @@
 package ashu.com.bingetest;
 
-public class RestrauntItemModel {
+public class RestaurantItemModel {
 
     private String fire_res_name;
     private String fire_res_type;
@@ -9,11 +9,11 @@ public class RestrauntItemModel {
     private String fire_res_img;
 
 
-    public RestrauntItemModel() {
+    public RestaurantItemModel() {
 
     }
 
-    public RestrauntItemModel(String fire_res_name, String fire_res_type, String fire_res_price, String fire_res_rating, String fire_res_img) {
+    public RestaurantItemModel(String fire_res_name, String fire_res_type, String fire_res_price, String fire_res_rating, String fire_res_img) {
         this.fire_res_name = fire_res_name;
         this.fire_res_type = fire_res_type;
         this.fire_res_price = fire_res_price;

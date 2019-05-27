@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".VideoAct"></activity>
         <activity
-            android:name=".RestrauntDetailActivity"
+            android:name=".RestaurantDetailActivity"
             android:label="@string/title_activity_restraunt_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".HomeActivity">
