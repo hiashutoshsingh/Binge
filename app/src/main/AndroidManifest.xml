@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".VideoAct"></activity>
+        <activity
+            android:name=".RestrauntDetail"
+            android:label="@string/title_activity_restraunt_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".ListRestraunts">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

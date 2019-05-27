@@ -1,5 +1,6 @@
 package ashu.com.bingetest;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 
 public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.ViewHolder> {
 
-    ArrayList<ItemData> list;
+    ArrayList<RestrauntItemModel> list;
     Context context;
 
-    public RestrauntAdapter(ArrayList<ItemData> list, Context context) {
+    public RestrauntAdapter(ArrayList<RestrauntItemModel> list, Context context) {
         this.list=list;
         this.context=context;
     }
@@ -34,8 +35,10 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
         viewHolder.txt_res_name.setText(list.get(position).getFire_res_name());
         viewHolder.txt_res_type.setText(list.get(position).getFire_res_type());
         viewHolder.txt_res_rating.setText(list.get(position).getFire_res_rating());
-        viewHolder.text_res_price.setText(list.get(position).getFire_res_cost());
+        viewHolder.text_res_price.setText(list.get(position).getFire_res_price());
         Picasso.get().load(list.get(position).getFire_res_image()).into(viewHolder.img_res);
+
+
 
     }
 
@@ -59,6 +62,15 @@ public class RestrauntAdapter extends RecyclerView.Adapter<RestrauntAdapter.View
             text_res_price=(TextView)itemLayoutView.findViewById(R.id.id_res_price);
             txt_res_rating=(TextView)itemLayoutView.findViewById(R.id.id_res_rating);
             txt_res_type=(TextView)itemLayoutView.findViewById(R.id.id_res_type);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(context, text_res_price.getText().toString()+" is clicked", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, RestrauntDetail.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
